@@ -629,11 +629,17 @@
 new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: ['Arrest', 'Seizures', 'DDR', 'Invest', 'Pros', 'Memos','TX','SUP', 'PR'],
     datasets: [{
       label: 'Summary of Activities',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
+      data: [12, 19, 3, 5, 2, 3, 8, 10, 15],
+      borderWidth: 1,
+      barPercentage: 0.6,
+      backgroundColor: [
+        'rgba(230, 79, 43)',
+        'rgba(132, 42, 20)',
+      ],
+
     }]
   },
   options: {
