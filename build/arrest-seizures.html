@@ -38,6 +38,7 @@
     <link href="./assets/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet" />
     <!-- Pie chart -->
     <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   
@@ -223,9 +224,11 @@
 <!-- cards row 2 -->
 <div class="flex flex-wrap mt-6 mx-3 ">
   <div class="w-full max-w-full px-3 mt-0 mr-5 ml-5 lg:w-full lg:flex-none">
-    <div class="m-4 border-black/12.5 bg-zinc-600 dark:shadow-dark-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border cent-bg">
-      <div class="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid p-6 pt-4 pb-0">
-        <h6 class="capitalize dark:text-white" style="font-size: 1.5rem;">Dashboard</h6>
+    <div class="m-4 border-black/12.5 dark:shadow-dark-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border cent-bg">
+      <div class="flex border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid p-6 pt-4 pb-0">
+       
+        <h6 class="capitalize dark:text-white" style="font-size: 1.5rem;">Dashboard  </h6>
+        <hr class="mt-5 mx-6 bg-slate-950 text-slate-950" style="border: 2px solid #000; width: 100px; height: 2px;">
       </div>
 
               <!-- cards -->
@@ -235,7 +238,7 @@
         <div class="flex flex-wrap -mx-3">
           <!-- card1 -->
           <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-6/12 " style="width: 25rem;">
-            <a href="./pages/create-report.html">
+            <!-- <a href="./pages/create-report.html"> -->
             <div id="arrest" class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
               <div class="flex-auto">
                 <div class="flex flex-row -mx-3">
@@ -258,7 +261,7 @@
                 </div>
               </div>
             </div>
-          </a>
+          <!-- </a> -->
           </div>
 
           <!-- card2 -->
@@ -289,6 +292,419 @@
           <!-- </a> -->
           </div>
           
+          <div class="flex-auto px-5 pt-0 pb-2" id="arrest-form">
+            <div class="p-0 overflow-x-auto">
+              <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500 text-lg">
+                <!-- <thead class="align-bottom">
+                  <tr>
+                    <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Incident Report</th>
+                  </tr>
+                </thead> -->
+                <tbody>
+                  <form style="display: none;">
+                    <div class="space-y-12">
+                      <div class="border-b border-gray-900/10 pb-12">
+                        <h2 class="text-base items-center text-4xl text-center pt-8 font-semibold leading-7 text-gray-900">Arrest Form</h2>
+                        <!-- <p class="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p> -->
+
+                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                          <div class="sm:col-span-2">
+                            <label for="country" class="block text-lg font-medium leading-6 text-gray-900">Operation Type</label>
+                            <div class="mt-2">
+                              <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-lg sm:leading-6">
+                                <option selected disabled style="display: none;">Select</option>
+                                <option>Raid</option>
+                                <option>Airport Bust</option>
+                                <option value="">Drug Bust</option>
+                                <option value="">Border Patrol</option>
+                                <option value="">Intelligence Raid</option>
+                                <option value="">Other</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="sm:col-span-2">
+                            <label for="country" class="block text-lg font-medium leading-6 text-gray-900">Type of Seizures</label>
+                            <div class="mt-2">
+                              <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-lg sm:leading-6">
+                                <option selected disabled style="display: none;">Select</option>
+                                <option>Drugs</option>
+                                <option>Money</option>
+                                <option>Weapons</option>
+                                <option>None</option>
+                                <option>Others</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          
+                          <div class="sm:col-span-2">
+                            <label for="country" class="block text-lg font-medium leading-6 text-gray-900">Case Status</label>
+                            <div class="mt-2">
+                              <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-lg sm:leading-6">
+                                <option selected disabled style="display: none;">Select</option>
+                                <option>Under Investigation</option>
+                                <option>Prosecution Ongoing</option>
+                                <option>Conviction Secured</option>
+                              </select>
+                            </div>
+                          </div>
+                          
+                          <div class="sm:col-span-3">
+                            <label for="first-name" class="block text-lg font-medium leading-6 text-gray-900">No of Suspect</label>
+                            <div class="mt-2">
+                              <input type="number" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                            </div>
+                          </div>
+
+                          <div class="sm:col-span-3">
+                            <label for="last-name" class="block text-lg font-medium leading-6 text-gray-900">No of Enforcement Personnel</label>
+                            <div class="mt-2">
+                              <input type="number" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                            </div>
+                          </div>
+                          <div id="suspect-form" class="sm:col-span-2">
+                            <label for="sname" class="block text-lg font-medium leading-6 text-gray-900">Name of Suspect</label>
+                            <div class="mt-2">
+                              <input id="sname" name="sname" type="text" autocomplete="sname" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                            </div>
+                          </div>
+                          
+                          <div class="sm:col-span-1">
+                            <label for="age" class="block text-lg font-medium leading-6 text-gray-900">Age</label>
+                            <div class="mt-2 inPutAge">
+                              <input id="age" name="age" type="number" autocomplete="age" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                            </div>
+                          </div>
+                          
+                          <div class="sm:col-span-2">
+                            <label for="address" class="block text-lg font-medium leading-6 text-gray-900">Address</label>
+                            <div class="mt-2 inPutAddress">
+                              <textarea id="address" name="address" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6"></textarea>
+                            </div>
+                          </div>
+                          
+                          <div class="sm:col-span-0.5 mt-5">
+                            <i class="fa fa-plus pt-10 add" id="add" onclick="addNew()" style="cursor: pointer;" aria-hidden="true"></i>
+                          </div>
+                          
+                          <!-- <div class="" id="clone-form" style="display: none;"> -->
+                            <!-- This is where the cloned forms will be appended -->
+
+                            <div id="suspect-form1" class="sm:col-span-2" style="display: none;">
+                              <label for="sname" class="block text-lg font-medium leading-6 text-gray-900">Name of Suspect</label>
+                              <div class="mt-2">
+                                <input id="sname" name="sname" type="text" autocomplete="sname" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                              </div>
+                            </div>
+                            
+                            <div id="suspect-form2" class="sm:col-span-1" style="display: none;">
+                              <label for="age" class="block text-lg font-medium leading-6 text-gray-900">Age</label>
+                              <div class="mt-2 inPutAge">
+                                <input id="age" name="age" type="number" autocomplete="age" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                              </div>
+                            </div>
+                            
+                            <div id="suspect-form3" class="sm:col-span-2" style="display: none;">
+                              <label for="address" class="block text-lg font-medium leading-6 text-gray-900">Address</label>
+                              <div class="mt-2 inPutAddress">
+                                <textarea id="address" name="address" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6"></textarea>
+                              </div>
+                            </div>
+
+
+                            <!-- Operatives -->
+                            
+                          <div id="" class="sm:col-span-2">
+                            <label for="sname" class="block text-lg font-medium leading-6 text-gray-900">Name of Personnel</label>
+                            <div class="mt-2">
+                              <input id="sname" name="sname" type="text" autocomplete="sname" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                            </div>
+                          </div>
+                          
+                          <div class="sm:col-span-2">
+                            <label for="age" class="block text-lg font-medium leading-6 text-gray-900">Rank</label>
+                            <div class="mt-2 inPutAge">
+                              <input id="age" name="age" type="text" autocomplete="age" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                            </div>
+                          </div>
+                          
+                          <div class="sm:col-span-1">
+                            <label for="age" class="block text-lg font-medium leading-6 text-gray-900">Command</label>
+                            <div class="mt-2 inPutAge">
+                              <input id="age" name="age" type="text" autocomplete="age" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                            </div>
+                          </div>
+                          
+                          <div class="sm:col-span-0.5 mt-5">
+                            <i class="fa fa-plus pt-10 add" id="add" onclick="addNewOp()" style="cursor: pointer;" aria-hidden="true"></i>
+                          </div>
+                          
+                          <!-- <div class="" id="clone-form" style="display: none;"> -->
+                            <!-- This is where the cloned forms will be appended -->
+
+                            <div id="suspect-formOp1" class="sm:col-span-2" style="display: none;">
+                              <label for="sname" class="block text-lg font-medium leading-6 text-gray-900">Name of Personnel</label>
+                              <div class="mt-2">
+                                <input id="sname" name="sname" type="text" autocomplete="sname" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                              </div>
+                            </div>
+                            
+                            <div id="suspect-formOp2" class="sm:col-span-2" style="display: none;">
+                              <label for="age" class="block text-lg font-medium leading-6 text-gray-900">Rank</label>
+                              <div class="mt-2 inPutAge">
+                                <input id="age" name="age" type="text" autocomplete="age" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                              </div>
+                            </div>
+                            
+                            <div id="suspect-formOp3" class="sm:col-span-1" style="display: none;">
+                              <label for="age" class="block text-lg font-medium leading-6 text-gray-900">Command</label>
+                              <div class="mt-2 inPutAge">
+                                <input id="age" name="age" type="text" autocomplete="age" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                              </div>
+                            </div>
+
+                            <div id="suspect-form3" class="sm:col-span-4">
+                              <label for="address" class="block text-lg font-medium leading-6 text-gray-900">Enter Detailed Report</label>
+                              <div class="mt-2 inPutAddress">
+                                <textarea id="report" name="report" cols="200" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6"></textarea>
+                              </div>
+                            </div>
+
+                          <!-- </div> -->
+                          
+
+                          <!-- More Links: <span class="fa fa-plus add"></span>
+                        <div class="appending_div">
+                        <div>
+                            Link URL: <input type="text" name="blog_linku_one[]"> &nbsp; Link Name:  <input type="number" name="blog_linkn_one[]">
+                        </div>
+                      </div> -->
+                          
+
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="mt-6 flex items-center justify-end gap-x-6" style="margin-right: 60px;">
+                      <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Save as Draft</button>
+                      <button type="submit" class="rounded-md bg-zinc-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit Report</button>
+                    </div>
+                  </form>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <!-- Seizures -->
+
+          <div class="flex-auto px-5 pt-0 pb-2" id="seizures-form" style="display: none;">
+            <div class="p-0 overflow-x-auto">
+              <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500 text-lg">
+                <!-- <thead class="align-bottom">
+                  <tr>
+                    <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Incident Report</th>
+                  </tr>
+                </thead> -->
+                <tbody>
+
+                  <!-- Seizures Form -->
+
+                  <form style="display: none;">
+                    <div class="space-y-12">
+                      <div class="border-b border-gray-900/10 pb-12">
+                        <h2 class="text-base items-center text-4xl text-center pt-8 font-semibold leading-7 text-gray-900">Seizures</h2>
+                        <!-- <p class="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p> -->
+
+                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                          <div class="sm:col-span-2">
+                            <label for="country" class="block text-lg font-medium leading-6 text-gray-900">Operation Type</label>
+                            <div class="mt-2">
+                              <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-lg sm:leading-6">
+                                <option selected disabled style="display: none;">Select</option>
+                                <option>Raid</option>
+                                <option>Airport Bust</option>
+                                <option value="">Drug Bust</option>
+                                <option value="">Border Patrol</option>
+                                <option value="">Intelligence Raid</option>
+                                <option value="">Other</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="sm:col-span-2">
+                            <label for="country" class="block text-lg font-medium leading-6 text-gray-900">Type of Seizures</label>
+                            <div class="mt-2">
+                              <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-lg sm:leading-6">
+                                <option selected disabled style="display: none;">Select</option>
+                                <option>Drugs</option>
+                                <option>Money</option>
+                                <option>Weapons</option>
+                                <option>None</option>
+                                <option>Others</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          
+                          <div class="sm:col-span-2">
+                            <label for="country" class="block text-lg font-medium leading-6 text-gray-900">Case Status</label>
+                            <div class="mt-2">
+                              <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-lg sm:leading-6">
+                                <option selected disabled style="display: none;">Select</option>
+                                <option>Under Investigation</option>
+                                <option>Prosecution Ongoing</option>
+                                <option>Conviction Secured</option>
+                              </select>
+                            </div>
+                          </div>
+                          
+                          <div class="sm:col-span-3">
+                            <label for="first-name" class="block text-lg font-medium leading-6 text-gray-900">No of Suspect</label>
+                            <div class="mt-2">
+                              <input type="number" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                            </div>
+                          </div>
+
+                          <div class="sm:col-span-3">
+                            <label for="last-name" class="block text-lg font-medium leading-6 text-gray-900">No of Enforcement Personnel</label>
+                            <div class="mt-2">
+                              <input type="number" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                            </div>
+                          </div>
+                          <div id="suspect-form" class="sm:col-span-2">
+                            <label for="sname" class="block text-lg font-medium leading-6 text-gray-900">Name of Suspect</label>
+                            <div class="mt-2">
+                              <input id="sname" name="sname" type="text" autocomplete="sname" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                            </div>
+                          </div>
+                          
+                          <div class="sm:col-span-1">
+                            <label for="age" class="block text-lg font-medium leading-6 text-gray-900">Age</label>
+                            <div class="mt-2 inPutAge">
+                              <input id="age" name="age" type="number" autocomplete="age" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                            </div>
+                          </div>
+                          
+                          <div class="sm:col-span-2">
+                            <label for="address" class="block text-lg font-medium leading-6 text-gray-900">Address</label>
+                            <div class="mt-2 inPutAddress">
+                              <textarea id="address" name="address" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6"></textarea>
+                            </div>
+                          </div>
+                          
+                          <div class="sm:col-span-0.5 mt-5">
+                            <i class="fa fa-plus pt-10 add" id="add" onclick="addNew()" style="cursor: pointer;" aria-hidden="true"></i>
+                          </div>
+                          
+                          <!-- <div class="" id="clone-form" style="display: none;"> -->
+                            <!-- This is where the cloned forms will be appended -->
+
+                            <div id="suspect-form1" class="sm:col-span-2" style="display: none;">
+                              <label for="sname" class="block text-lg font-medium leading-6 text-gray-900">Name of Suspect</label>
+                              <div class="mt-2">
+                                <input id="sname" name="sname" type="text" autocomplete="sname" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                              </div>
+                            </div>
+                            
+                            <div id="suspect-form2" class="sm:col-span-1" style="display: none;">
+                              <label for="age" class="block text-lg font-medium leading-6 text-gray-900">Age</label>
+                              <div class="mt-2 inPutAge">
+                                <input id="age" name="age" type="number" autocomplete="age" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                              </div>
+                            </div>
+                            
+                            <div id="suspect-form3" class="sm:col-span-2" style="display: none;">
+                              <label for="address" class="block text-lg font-medium leading-6 text-gray-900">Address</label>
+                              <div class="mt-2 inPutAddress">
+                                <textarea id="address" name="address" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6"></textarea>
+                              </div>
+                            </div>
+
+
+                            <!-- Operatives -->
+                            
+                          <div id="" class="sm:col-span-2">
+                            <label for="sname" class="block text-lg font-medium leading-6 text-gray-900">Name of Personnel</label>
+                            <div class="mt-2">
+                              <input id="sname" name="sname" type="text" autocomplete="sname" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                            </div>
+                          </div>
+                          
+                          <div class="sm:col-span-2">
+                            <label for="age" class="block text-lg font-medium leading-6 text-gray-900">Rank</label>
+                            <div class="mt-2 inPutAge">
+                              <input id="age" name="age" type="text" autocomplete="age" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                            </div>
+                          </div>
+                          
+                          <div class="sm:col-span-1">
+                            <label for="age" class="block text-lg font-medium leading-6 text-gray-900">Command</label>
+                            <div class="mt-2 inPutAge">
+                              <input id="age" name="age" type="text" autocomplete="age" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                            </div>
+                          </div>
+                          
+                          <div class="sm:col-span-0.5 mt-5">
+                            <i class="fa fa-plus pt-10 add" id="add" onclick="addNewOp()" style="cursor: pointer;" aria-hidden="true"></i>
+                          </div>
+                          
+                          <!-- <div class="" id="clone-form" style="display: none;"> -->
+                            <!-- This is where the cloned forms will be appended -->
+
+                            <div id="suspect-formOp1" class="sm:col-span-2" style="display: none;">
+                              <label for="sname" class="block text-lg font-medium leading-6 text-gray-900">Name of Personnel</label>
+                              <div class="mt-2">
+                                <input id="sname" name="sname" type="text" autocomplete="sname" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                              </div>
+                            </div>
+                            
+                            <div id="suspect-formOp2" class="sm:col-span-2" style="display: none;">
+                              <label for="age" class="block text-lg font-medium leading-6 text-gray-900">Rank</label>
+                              <div class="mt-2 inPutAge">
+                                <input id="age" name="age" type="text" autocomplete="age" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                              </div>
+                            </div>
+                            
+                            <div id="suspect-formOp3" class="sm:col-span-1" style="display: none;">
+                              <label for="age" class="block text-lg font-medium leading-6 text-gray-900">Command</label>
+                              <div class="mt-2 inPutAge">
+                                <input id="age" name="age" type="text" autocomplete="age" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
+                              </div>
+                            </div>
+
+                            <div id="suspect-form3" class="sm:col-span-4">
+                              <label for="address" class="block text-lg font-medium leading-6 text-gray-900">Enter Detailed Report</label>
+                              <div class="mt-2 inPutAddress">
+                                <textarea id="report" name="report" cols="200" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6"></textarea>
+                              </div>
+                            </div>
+
+                          <!-- </div> -->
+                          
+
+                          <!-- More Links: <span class="fa fa-plus add"></span>
+                        <div class="appending_div">
+                        <div>
+                            Link URL: <input type="text" name="blog_linku_one[]"> &nbsp; Link Name:  <input type="number" name="blog_linkn_one[]">
+                        </div>
+                      </div> -->
+                          
+
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="mt-6 flex items-center justify-end gap-x-6" style="margin-right: 60px;">
+                      <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Save as Draft</button>
+                      <button type="submit" class="rounded-md bg-zinc-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit Report</button>
+                    </div>
+                  </form>
+                </tbody>
+              </table>
+            </div>
+          </div>
           
         </div>
         <!-- <div class="flex-auto p-4">
@@ -351,70 +767,26 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script>
-
     var arrest  = document.getElementById("arrest")
     var seizures = document.getElementById("seizures")
 
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("arrest-form").style.display = "none";
+      document.getElementById("seizures-form").style.display = 'none'
+    });
+
+    
     arrest.addEventListener("click", function(){
-      alert("arrest")
+      document.getElementById("arrest-form").style.display ="inline"
+      document.getElementById("seizures-form").style.display ="none"
     })
 
     seizures.addEventListener("click", function(){
-      alert("seizures")
+      document.getElementById("arrest-form").style.display ="none"
+      document.getElementById("seizures-form").style.display ="inline"
     })
  
-    var pie = new ej.charts.AccumulationChart({
-        //Initializing Series
-        series: [
-            {
-                dataSource: [
-                    { 'x': 'Arrest and Seizures', y: 37 }, { 'x': 'investigatiions', y: 17 },
-                    { 'x': 'Prosecutions', y: 19 },
-                    { 'x': 'Convictions', y: 4 }, { 'x': 'Forfeitures', y: 11 },
-                    { 'x': 'Rehabilitations', y: 12 }
-                ],
-                dataLabel: {
-                    visible: true,
-                    position: 'Inside',
-                },
-                xName: 'x',
-                yName: 'y'
-            }
-        ],
-        tooltip: { enable: true, header: 'Report', format: '${point.x}:<b> ${point.y}%<b>' },
-    });
-    pie.appendTo('#container');
-
-
-
-    // Bar chart
-    const ctx = document.getElementById('myChart');
-
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Arrest', 'Seizures', 'DDR', 'Invest', 'Pros', 'Memos','TX','SUP', 'PR'],
-    datasets: [{
-      label: 'Summary of Activities',
-      data: [12, 19, 3, 5, 2, 3, 8, 10, 15],
-      borderWidth: 1,
-      barPercentage: 0.6,
-      backgroundColor: [
-        'rgba(230, 79, 43)',
-        'rgba(132, 42, 20)',
-      ],
-
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
-
+   
 
 </script>
 </html>
