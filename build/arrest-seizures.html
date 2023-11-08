@@ -22,6 +22,8 @@
     <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
     <title>FLOW | DASHBOARD</title>
     
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- Bootsrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/4fb9a3814e.js" crossorigin="anonymous"></script>
@@ -38,7 +40,6 @@
     <link href="./assets/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet" />
     <!-- Pie chart -->
     <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   
@@ -208,18 +209,10 @@
               margin: 0 80px 5px 0;
             }
             .dashIcon{
-              margin: 20px 0px 2px 30px !important;
+              width: 120px !important;
+              margin: 30px 0px 2px 30px !important;
             }
       </style>
-
-      <div class="flex">
-        <div class="w-4/5">
-          <span class="bg-blue"></span>
-        </div>
-        <div class="w-1/5">
-          <span class="bg-white"></span>
-        </div>
-      </div>
 
 <!-- cards row 2 -->
 <div class="flex flex-wrap mt-6 mx-3 ">
@@ -228,7 +221,7 @@
       <div class="flex border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid p-6 pt-4 pb-0">
        
         <h6 class="capitalize dark:text-white" style="font-size: 1.5rem;">Dashboard  </h6>
-        <hr class="mt-5 mx-6 bg-slate-950 text-slate-950" style="border: 2px solid #000; width: 100px; height: 2px;">
+        <hr class="mt-5 mx-6 bg-slate-950 text-slate-950" style="border: 3px solid #000; width: 70px; height: 2px; opacity: .9;">
       </div>
 
               <!-- cards -->
@@ -239,14 +232,14 @@
           <!-- card1 -->
           <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-6/12 " style="width: 25rem;">
             <!-- <a href="./pages/create-report.html"> -->
-            <div id="arrest" class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
+            <div id="arrest" class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border cursor-pointer Custcard">
               <div class="flex-auto">
                 <div class="flex flex-row -mx-3">
               
-                  <div class="text-right basis-3/1">
+                  <div class="text-right ">
                     <div class="inline-block w-12 h-12 text-center rounded-circle">
                       <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/arrest.png" width="80" height="75"  class="dashIcon" alt="">
+                      <img src="./assets/img/arrest.png"  class="dashIcon w-24 h-12" style="width: 100px;" alt="arrest">
                     </div>
                   </div>
                   <div class="flex-none w-2/3 max-w-ful items-center">
@@ -267,7 +260,7 @@
           <!-- card2 -->
           <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-6/12 " style="width: 25rem;">
             <!-- <a href="./pages/create-report.html"> -->
-            <div id="seizures" class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
+            <div id="seizures" class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border cursor-pointer Custcard">
               <div class="flex-auto">
                 <div class="flex flex-row -mx-3">
                   
@@ -786,6 +779,17 @@
       document.getElementById("seizures-form").style.display ="inline"
     })
  
+    function addNew(){
+      document.getElementById("suspect-form1").style.display ="inline";
+      document.getElementById("suspect-form2").style.display ="inline";
+      document.getElementById("suspect-form3").style.display ="inline";
+    }
+    
+    function addNewOp(){
+      document.getElementById("suspect-formOp1").style.display ="inline";
+      document.getElementById("suspect-formOp2").style.display ="inline";
+      document.getElementById("suspect-formOp3").style.display ="inline";
+    }
    
 
 </script>
