@@ -136,7 +136,7 @@
           <li class="mt-0.5 mb-0.5 w-full">
             <img src="./assets/img/flow.png" width="100" height="80" class="mt-3" style="margin: auto; margin-top: 20px; border-radius: 10px; " alt="NDLEA FLOW AUTOMATION">
           </li>
-          <span class="text-center font-light" style="font-size: 0.7rem;"> National Drug Law Enforcement Agency Fully Linked Optimized WorkFlow</span>
+          <span class="text-center font-light" style="font-size: 0.7rem;"> National Drug Law Enforcement Agency <br> Fully Linked Optimized WorkFlow</span>
         </ul>
       </div>
 
@@ -205,14 +205,141 @@
               /* border: 1px solid;
               padding: 10px; */
               box-shadow: 5px 10px 18px #888888;
-              height: 120px !important;
+              height: 80px !important;
               margin: 0 80px 5px 0;
+              padding: 0px 0px 10px 0px;
             }
             .dashIcon{
               width: 120px !important;
-              margin: 30px 0px 2px 30px !important;
+              margin: 20px 0px 8px 30px !important;
             }
+
+
+
+            
+  /* Snackbar CSS */
+  :root {
+    --bs-font-sans-serif: var(--bs-font-monospace);
+  }
+  
+ 
+  
+  .toast:not(.show) {
+    display: block;
+  }
+  
+  .toast-container {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  [data-component*=toast] {
+    position: static;
+  }
+  [data-component*=toast] [data-ref=form] {
+    display: flex;
+  }
+  [data-component*=toast][open].is-closing {
+    -webkit-animation: disappear 0.3s;
+            animation: disappear 0.3s;
+  }
+  [data-component*=toast][open] {
+    -webkit-animation: appear 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: appear 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  [data-component*=toast] .btn-close {
+    margin: auto;
+    -webkit-margin-end: 1em;
+            margin-inline-end: 1em;
+  }
+  [data-component*=toast].toast-success .btn-close, [data-component*=toast].toast-error .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+  }
+  
+  @-webkit-keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @-webkit-keyframes disappear {
+    to {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+  @keyframes disappear {
+    to {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  /* Snackbar */
+  /* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 200px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 12px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 50%; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 50%; opacity: 0;}
+  to {bottom: 50%; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 50%; opacity: 0;}
+  to {bottom: 50%; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 50%; opacity: 1;}
+  to {bottom: 50%; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
       </style>
+
 
 <!-- cards row 2 -->
 <div class="flex flex-wrap mt-6 mx-3 ">
@@ -223,16 +350,19 @@
         <h6 class="capitalize dark:text-white" style="font-size: 1.5rem;">Dashboard  </h6>
         <hr class="mt-5 mx-6 bg-slate-950 text-slate-950" style="border: 3px solid #000; width: 70px; height: 2px; opacity: .9;">
       </div>
+      <button style="display:none" id="snackk" onclick="myFunction()">Show Snackbar</button>
 
+      <!-- The actual snackbar -->
+      <div id="snackbar">Coming Soon...</div>
               <!-- cards -->
     <div class="flex gap-0">
       <div class="w-4/5 px-6 py-6 mx-auto">
         <!-- row 1 -->
         <div class="flex flex-wrap -mx-3">
           <!-- card1 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-6/12 " style="width: 25rem;">
+          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-6/12 " style="width: 23rem;">
             <!-- <a href="./pages/create-report.html"> -->
-            <div id="arrest" class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border cursor-pointer Custcard">
+            <div id="arrest" class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border text-center cursor-pointer Custcard">
               <div class="flex-auto">
                 <div class="flex flex-row -mx-3">
               
@@ -244,7 +374,7 @@
                   </div>
                   <div class="flex-none w-2/3 max-w-ful items-center">
                     <div>
-                      <p class="mb-0 font-sans pt-3 pl-4 text-4xl font-bold text-center leading-normal capitalize dark:text-white dark:opacity-60" style="color: #FFFFFF; padding-top: 35px; padding-left: 5cap; font-size: 2rem;">Arrest</p>
+                      <p class="mb-0 font-sans pl-4 text-lg font-bold text-center leading-normal capitalize dark:text-white dark:opacity-60" style="color: #FFFFFF; padding-top: 15px; padding-left: 5px; font-size: 2rem;">Arrest</p>
                       <!-- <h5 class="mb-2 font-semibold dark:text-white">Total: 10</h5> -->
                       <!-- <p class="mb-0 dark:text-white dark:opacity-60">
                         <span class="text-sm font-semibold leading-normal text-emerald-500">3 Reports</span>
@@ -258,7 +388,7 @@
           </div>
 
           <!-- card2 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-6/12 " style="width: 25rem;">
+          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-6/12 " style="width: 23rem;">
             <!-- <a href="./pages/create-report.html"> -->
             <div id="seizures" class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border cursor-pointer Custcard">
               <div class="flex-auto">
@@ -267,12 +397,12 @@
                   <div class="text-right">
                     <div class="inline-block w-12 h-12 text-center rounded-circle ">
                       <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/DRUGS ICON.png" width="80" height="75" class="dashIcon" alt="">
+                      <img src="./assets/img/DRUGS ICON.png" width="80" height="75" class="dashIcon " alt="">
                     </div>
                   </div>
                   <div class="flex-none w-2/3 max-w-full px-3 items-center">
                     <div>
-                      <p class="mb-0 font-sans pt-3 pl-4 text-lg font-bold text-center leading-normal capitalize dark:text-white dark:opacity-60" style="color: #FFFFFF;  padding-top: 35px; padding-left: 50px; font-size: 2rem;">Seizures</p>
+                      <p class="mb-0 font-sans pt-3 pl-4 text-lg font-bold text-center leading-normal capitalize dark:text-white dark:opacity-60" style="color: #FFFFFF;  padding-top: 15px; padding-left: 50px; font-size: 1.8rem;">Seizures</p>
                       <!-- <h5 class="mb-2 font-semibold dark:text-white">Total: 10</h5> -->
                       <!-- <p class="mb-0 dark:text-white dark:opacity-60">
                         <span class="text-sm font-semibold leading-normal text-emerald-500">3 Reports</span>
@@ -360,6 +490,7 @@
                             <div class="mt-2">
                               <input id="sname" name="sname" type="text" autocomplete="sname" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
                             </div>
+                            <label style="width: 290px;" onclick="getrr()" class="rounded-md mt-10 bg-zinc-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 text-center cursor-pointer"><i class="fa-sharp fa-solid fa-fingerprint "></i>  Capture Biometric</label>
                           </div>
                           
                           <div class="sm:col-span-1">
@@ -388,6 +519,8 @@
                               <div class="mt-2">
                                 <input id="sname" name="sname" type="text" autocomplete="sname" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
                               </div>
+                              
+                            <label style="width: 290px;" onclick="getrr()" class="rounded-md mt-10 bg-zinc-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 text-center cursor-pointer"><i class="fa-sharp fa-solid fa-fingerprint "></i>  Capture Biometric</label>
                             </div>
                             
                             <div id="suspect-form2" class="sm:col-span-1" style="display: none;">
@@ -475,11 +608,19 @@
                           
 
                         </div>
+                        <div class="section-user mt-10 items-center">
+                          <div id="upload-container">
+                              <p id="file-name"></p>
+                              <input type="file" id="fileUpload" onchange="handleFileSelect(event)" style="display: none;">
+                              <label for="fileUpload" style="width: 300px;" class="button-file w-100 rounded-md bg-zinc-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 text-center"><i class="fa-solid fa-paperclip"></i>   Attach file if any</label>
+                          </div>
+                      </div>
                       </div>
 
                     </div>
-
+                    
                     <div class="mt-6 flex items-center justify-end gap-x-6" style="margin-right: 60px;">
+                      
                       <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Save as Draft</button>
                       <button type="submit" class="rounded-md bg-zinc-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit Report</button>
                     </div>
@@ -570,6 +711,7 @@
                             <div class="mt-2">
                               <input id="sname" name="sname" type="text" autocomplete="sname" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
                             </div>
+                            <label style="width: 290px;" onclick="getrr()" class="rounded-md mt-10 bg-zinc-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 text-center cursor-pointer"><i class="fa-sharp fa-solid fa-fingerprint "></i>  Capture Biometric</label>
                           </div>
                           
                           <div class="sm:col-span-1">
@@ -598,6 +740,7 @@
                               <div class="mt-2">
                                 <input id="sname" name="sname" type="text" autocomplete="sname" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6">
                               </div>
+                              <label style="width: 290px;" onclick="getrr()" class="rounded-md mt-10 bg-zinc-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 text-center cursor-pointer"><i class="fa-sharp fa-solid fa-fingerprint "></i>  Capture Biometric</label>
                             </div>
                             
                             <div id="suspect-form2" class="sm:col-span-1" style="display: none;">
@@ -750,6 +893,41 @@
       </div>
     </div>
   </body>
+  <script>
+
+    function handleFileSelect(event) {
+                const fileInput = event.target;
+                const fileNameDisplay = document.getElementById('file-name');
+    
+                if (fileInput.files.length > 0) {
+                    const fileName = fileInput.files[0].name;
+                    fileNameDisplay.textContent = `Selected file: ${fileName}`;
+                } else {
+                    fileNameDisplay.textContent = '';
+                }
+            }
+
+
+            function getrr(){
+              document.getElementById("snackk").click();
+            }
+            function details(){
+              document.getElementById("snackk").click();
+            }
+
+
+            function myFunction() {
+              // Get the snackbar DIV
+              var x = document.getElementById("snackbar");
+              
+              // Add the "show" class to DIV
+              x.className = "show";
+              
+              // After 3 seconds, remove the show class from DIV
+              setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+              }
+
+    </script>
   <!-- plugin for charts  -->
   <script src="./assets/js/plugins/chartjs.min.js" async></script>
 
