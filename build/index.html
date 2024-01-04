@@ -45,10 +45,14 @@
     <div class="absolute w-full bg-blue-500 dark:hidden min-h-32 h-32 mb-20" style="height: 100px; background: #851300;"></div>
 
     <aside class="fixed inset-y-0 flex-wrap items-center overflow-y-auto justify-between block w-full p-0 my-4 antialiased transition-transform duration-200 -translate-x-full bg-white border-0 shadow-xl dark:shadow-none dark:bg-slate-850 xl:ml-6 max-w-64 ease-nav-brand z-990 rounded-2xl xl:left-0 xl:translate-x-0" style="background-color: #232323; color: #fff;" aria-expanded="false">
+      <i class="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times dark:text-white text-slate-400 xl:hidden" sidenav-close></i>
+      <!-- <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap dark:text-white text-slate-700" href="https://demos.creative-tim.com/argon-dashboard-tailwind/pages/dashboard.html" target="_blank"> -->
       <div class="flex justify-center pt-5 items-center">
         <img class="rounded-full" width="150" height="150" src="../build/assets/img/dp.png" alt="">
         <span class="top-5 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+        
     </div>
+
       <div class="h-19 flex justify-center items-center">
           <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">John Haruna <br>
             <span class="text-sm text-center -pt-3 font-normal">Kano Command</span> </span>
@@ -144,16 +148,15 @@
 
     <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
       <!-- Navbar -->
-      <nav class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start" navbar-main navbar-scroll="false">
+      <div class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start" navbar-main navbar-scroll="false">
         <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
-          <nav>
+        
             <!-- breadcrumb -->
             <ol class="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
               <!-- <li class="text-sm leading-normal">
                 <a class="text-white opacity-50" href="javascript:;">Pages</a>
               </li> -->
-              <i class="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times dark:text-white text-slate-400 xl:hidden" sidenav-close></i>
-        <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap dark:text-white text-slate-700" href="https://demos.creative-tim.com/argon-dashboard-tailwind/pages/dashboard.html" target="_blank">
+             
           <div class="flex w-24">
             
               <img src="./assets/img/Asset.png" height="40" width="100" class="px-2 inline h-full max-w-full transition-all duration-200 dark:hidden ease-nav-brand max-h-12" alt="main_logo" />
@@ -167,25 +170,21 @@
               <!-- <li class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']" aria-current="page">Dashboard</li>
             </ol> -->
             <!-- <h6 class="mb-0 font-bold text-white capitalize">Dashboard</h6> -->
-          </nav>
+        
 
-          <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
-    
-            </div>
-            <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
-              <li class="flex items-center pl-4 xl:hidden">
-                <a href="javascript:;" class="block p-0 text-sm text-white transition-all ease-nav-brand" sidenav-trigger>
-                  <div class="w-4.5 overflow-hidden">
-                    <i class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
-                    <i class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
-                    <i class="ease relative block h-0.5 rounded-sm bg-white transition-all"></i>
-                  </div>
-                </a>
-              </li>
-                </ul>
-              </li>
-            </ul>
+          
           </div>
+          <ul class="flex flex-row justify-end pl-0 mb-5 -py-6 list-none md-max:w-full">
+            <li class="flex items-center pl-4 xl:hidden">
+              <a href="javascript:;" class="block p-0 text-sm text-white transition-all ease-nav-brand" sidenav-trigger>
+                <div class="w-4.5 overflow-hidden">
+                  <i class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
+                  <i class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
+                  <i class="ease relative block h-0.5 rounded-sm bg-white transition-all"></i>
+                </div>
+              </a>
+            </li>
+          </ul>
         </div>
       </nav>
 
@@ -474,9 +473,9 @@
         </div>
 
         <!-- row 1.3-->
-        <!-- <div class="flex flex-wrap -mx-3"> -->
+        <div class="flex flex-wrap -mx-3">
           <!-- card1 -->
-          <!-- <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
+          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
             <a href="./pages/create-report.html">
             <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
               <div class="flex-auto">
@@ -484,6 +483,7 @@
                   
                   <div class="text-right basis-1/3">
                     <div class="inline-block w-12 h-12 text-center rounded-circle ">
+                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
                       <img src="./assets/img/CONSUMABLES.png" width="50" height="45"  class="dashIcon" alt="">
                     </div>
                   </div>
@@ -496,10 +496,10 @@
               </div>
             </div>
           </a>
-          </div> -->
-          
+          </div>
+
           <!-- card2 -->
-          <!-- <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
+          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
             <a href="./pages/create-report.html">
             <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
               <div class="flex-auto">
@@ -507,6 +507,7 @@
                   
                   <div class="text-right basis-1/3">
                     <div class="inline-block w-12 h-12 text-center rounded-circle ">
+                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
                       <img src="./assets/img/forensics.png" width="50" height="45"  class="dashIcon" alt="">
                     </div>
                   </div>
@@ -519,11 +520,11 @@
               </div>
             </div>
           </a>
-          </div> -->
+          </div>
 
           
           <!-- card 3 -->
-          <!-- <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
+          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
             <a href="./pages/create-report.html">
             <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
               <div class="flex-auto">
@@ -531,6 +532,7 @@
                   
                   <div class="text-right basis-1/3">
                     <div class="inline-block w-12 h-12 text-center rounded-circle ">
+                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
                       <img src="./assets/img/DOCUMENT.png" width="50" height="45"  class="dashIcon" alt="">
                     </div>
                   </div>
@@ -544,7 +546,7 @@
             </div>
           </a>
           </div>
-        </div> -->
+        </div>
 
         <!-- row 1.5-->
         <div class="flex flex-wrap -mx-3">
@@ -608,7 +610,7 @@
                   <div class="text-right basis-1/3">
                     <div class="inline-block w-12 h-12 text-center rounded-circle ">
                       <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/SUPPORT ICON-01.png" width="50" height="45"  class="dashIcon" alt="">
+                      <img src="./assets/img/arrest.png" width="50" height="45"  class="dashIcon" alt="">
                     </div>
                   </div>
                   <div class="flex-none w-2/3 max-w-full px-3">
@@ -628,8 +630,8 @@
         </div>
       </div> -->
     </div>
-    <div class="w-2/5">
-      <div class="">
+    <div class="w-2/5 grid h-screen grid-cols-1 lg:grid-cols-2">
+      <div class="hidden lg:block">
           <div class="bg-white shadow-lg overflow-hidden " style="margin-bottom: 15px;">
             <div class="mb-3.5">
               <canvas id="myChart"></canvas>
@@ -678,6 +680,8 @@
         
       </div>
     </div>
+
+
   </body>
   <!-- plugin for charts  -->
   <script src="./assets/js/plugins/chartjs.min.js" async></script>
@@ -685,7 +689,7 @@
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js" integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
   <!-- plugin for scrollbar  -->
   <script src="./assets/js/plugins/perfect-scrollbar.min.js" async></script>
-  <script src="./argon-dashboard-tailwind.js?v=1.0.1" async></script>
+  <script src="./assets/js/argon-dashboard-tailwind.js?v=1.0.1" async></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script>
