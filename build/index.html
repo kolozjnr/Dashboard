@@ -38,13 +38,98 @@
     <link href="./assets/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet" />
     <!-- Pie chart -->
     <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  } */
+  .nav-text{
+              color: #000;
+            }
+
+  .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+  }
+
+  .card {
+      width: 250px;
+      height: 110px;
+      margin: 20px 5px 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+  }
+
+  .card:hover {
+      transform: scale(1.05);
+  }
+
+  .card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+  }
+
+  .card-content {
+      padding: 15px;
+      display: flex;
+      vertical-align: middle;
+  }
+  .pending-task{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    padding: 0 10px 0 10px;
+    color: #fff;
+    margin: 1px ;
+  }
+  .card-icon {
+    width: 30px;
+    background-color: rgba(149, 52, 20, 0.3);
+    border-radius: 5px;
+    display: block;
+    margin: 10px 10px 2px 10px;
+    padding: 2px 5px;
+    height: 30px;
+}
+.task-status{
+  font-size: 1.1rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  padding: 2px 0 0 15px;
+}
+  
+
+  @media (max-width: 768px) {
+      .container {
+          flex-direction: column;
+          align-items: center;
+      }
+
+      .card {
+          width: 100%;
+      }
+  }
+</style>
   </head>
 
   
   <body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
-    <div class="absolute w-full bg-blue-500 dark:hidden min-h-32 h-32 mb-20" style="height: 100px; background: #851300;"></div>
+    <div class="absolute w-full bg-blue-500 dark:hidden min-h-32 h-32 mb-20" style="height: 100px; background: #fff;"></div>
 
-    <aside class="fixed inset-y-0 flex-wrap items-center overflow-y-auto justify-between block w-full p-0 my-4 antialiased transition-transform duration-200 -translate-x-full bg-white border-0 shadow-xl dark:shadow-none dark:bg-slate-850 xl:ml-6 max-w-64 ease-nav-brand z-990 rounded-2xl xl:left-0 xl:translate-x-0" style="background-color: #232323; color: #fff;" aria-expanded="false">
+    <aside class="fixed inset-y-0 flex-wrap items-center overflow-y-auto justify-between block w-full p-0 my-4 antialiased transition-transform duration-200 -translate-x-full bg-white border-0 shadow-xl dark:shadow-none dark:bg-slate-850 xl:ml-6 max-w-64 ease-nav-brand z-990 rounded-2xl xl:left-0 xl:translate-x-0" style="background-color: #fff; color: #fff;" aria-expanded="false">
       <i class="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times dark:text-white text-slate-400 xl:hidden" sidenav-close></i>
       <!-- <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap dark:text-white text-slate-700" href="https://demos.creative-tim.com/argon-dashboard-tailwind/pages/dashboard.html" target="_blank"> -->
       <div class="flex justify-center pt-5 items-center">
@@ -54,7 +139,7 @@
     </div>
 
       <div class="h-19 flex justify-center items-center">
-          <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">John Haruna <br>
+          <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand nav-text">John Haruna <br>
             <span class="text-sm text-center -pt-3 font-normal">Kano Command</span> </span>
         </a>
       </div>
@@ -64,22 +149,23 @@
       <div class="items-center block w-auto max-h-screen h-sidenav grow basis-full">
         <ul class="flex flex-col pl-0 mb-0 font-sans">
 
-          <li class="mt-0.5 w-full -mb-3">
+          <li class="mt-0.5 w-full -mb-5">
             <a class="text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors dark:text-white dark:opacity-80" href="../pages/dashboard.html">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 <!-- <i class="relative top-0 text-sm leading-normal text-blue-500 fa fa-home "></i> -->
-                <i class="fa fa-light fa-house fa-2xl" style="color: #f5f5f5;"></i>
+                <i class="fa fa-light fa-house fa-2xl" style="color: #020202;"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Home</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease nav-text">Home</span>
             </a>
           </li>
           <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700 m-0 p-0">
-          <li class="mt-0.5 w-full">
+          <li class="mt-0.5 my-10 w-full">
             <a class="text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors dark:text-white dark:opacity-80" href="#">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
+                <i class="fa-regular fa-user fa-2xl" style="color: #161414;"></i>
+                
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Profile</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease nav-text">Profile</span>
             </a>
           </li>
 
@@ -88,9 +174,9 @@
           <li class="mt-0.5 w-full">
             <a class="py-0 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors dark:text-white dark:opacity-80" href="#">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
-                <i class="fa fa-solid fa-envelope fa-2xl" style="color: #ffffff;"></i>
+                <i class="fa fa-solid fa-envelope fa-2xl" style="color: #020202;"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Messages</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease nav-text">Messages</span>
             </a>
           </li>
 
@@ -98,9 +184,9 @@
           <li class="mt-0.5 w-full">
             <a class="py-0 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors dark:text-white dark:opacity-80" href="#">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
-                <i class="fa fa-solid fa-bell fa-2xl" style="color: #ffffff;"></i>
+                <i class="fa fa-solid fa-bell fa-2xl" style="color: #020202;"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Notifications</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease nav-text">Notifications</span>
             </a>
           </li>
 
@@ -108,9 +194,9 @@
           <li class="mt-0.5 w-full">
             <a class="py-0 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors dark:text-white dark:opacity-80" href="#">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
-                <i class="fa-solid fa-location-dot fa-2xl" style="color: #ffffff;"></i>
+                <i class="fa-solid fa-location-dot fa-2xl" style="color: #020202;"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Meetings</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease nav-text">Meetings</span>
             </a>
           </li>
 
@@ -119,9 +205,9 @@
           <li class="mt-0.5 w-full">
             <a class="py-0 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors dark:text-white dark:opacity-80" href="#">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
-                <i class="fa-solid fa-gear fa-2xl" style="color: #ffffff;"></i>
+                <i class="fa-solid fa-gear fa-2xl" style="color: #020202;"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Settings</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease nav-text">Settings</span>
             </a>
           </li>
 
@@ -129,9 +215,9 @@
           <li class="mt-0.5 w-full">
             <a class="py-0 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors dark:text-white dark:opacity-80" href="#">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
-                <i class="fa-regular fa-calendar-days fa-2xl" style="color: #ffffff;"></i>
+                <i class="fa-regular fa-calendar-days fa-2xl" style="color: #020202;"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Calender</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease nav-text">Calender</span>
             </a>
           </li>
 
@@ -148,16 +234,28 @@
 
     <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
       <!-- Navbar -->
+      
       <div class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start" navbar-main navbar-scroll="false">
-        <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
         
+        <div class="flex items-center md:ml-auto md:pr-4">
+          <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease">
+            <span class="text-sm ease leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
+              <i class="fas fa-search"></i>
+            </span>
+            <input type="text" class="pl-9 text-sm focus:shadow-primary-outline ease w-2/6 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 dark:bg-slate-850 dark:text-white bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none focus:transition-shadow" placeholder="Type here..." style="width: 500px;" />
+          </div>
+        </div>
+
+
+        <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
+          
             <!-- breadcrumb -->
             <ol class="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
               <!-- <li class="text-sm leading-normal">
                 <a class="text-white opacity-50" href="javascript:;">Pages</a>
               </li> -->
              
-          <div class="flex w-24">
+          <!-- <div class="flex w-24">
             
               <img src="./assets/img/Asset.png" height="40" width="100" class="px-2 inline h-full max-w-full transition-all duration-200 dark:hidden ease-nav-brand max-h-12" alt="main_logo" />
          
@@ -165,13 +263,114 @@
             <div class="mb-3">
               <img src="./assets/img/Asset.png" class="hidden h-full px-3 -py-3 max-w-full transition-all duration-200 dark:inline ease-nav-brand max-h-12" alt="main_logo" />
             </div>
-          </div>
+          </div> -->
           
               <!-- <li class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']" aria-current="page">Dashboard</li>
             </ol> -->
             <!-- <h6 class="mb-0 font-bold text-white capitalize">Dashboard</h6> -->
-        
 
+            <div class="flex md:ml-auto items-center mt-2 grow mr-auto sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
+             
+              <ul style="marg" class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
+                <!-- online builder btn  -->
+                <li class="flex items-center">
+                  <a class="inline-block px-8 py-2 mb-0 mr-4 text-xs font-bold text-center text-blue-500 uppercase align-middle transition-all ease-in bg-transparent border border-blue-500 border-solid rounded-lg shadow-none cursor-pointer leading-pro hover:-translate-y-px active:shadow-xs hover:border-blue-500 active:bg-blue-500 active:hover:text-blue-500 hover:text-blue-500 tracking-tight-rem hover:bg-transparent hover:opacity-75 hover:shadow-none active:text-white active:hover:bg-transparent" target="_blank" href="https://www.creative-tim.com/builder/soft-ui?ref=navbar-dashboard&amp;_ga=2.76518741.1192788655.1647724933-1242940210.1644448053">Button</a>
+                </li>
+                <li class="flex items-center">
+                  <a href="../pages/sign-in.html" class="block px-0 py-2 text-sm font-semibold text-white transition-all ease-nav-brand">
+                    <i class="fa fa-user sm:mr-1"></i>
+                    <span class="hidden sm:inline nav-text">Sign In</span>
+                  </a>
+                </li>
+                <li class="flex items-center pl-4 xl:hidden">
+                  <a href="javascript:;" class="block p-0 text-sm text-white transition-all ease-nav-brand" sidenav-trigger>
+                    <div class="w-4.5 overflow-hidden">
+                      <i class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
+                      <i class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
+                      <i class="ease relative block h-0.5 rounded-sm bg-white transition-all"></i>
+                    </div>
+                  </a>
+                </li>
+  
+                <!-- notifications -->
+  
+                <li class="relative flex items-center pr-2">
+                  <p class="hidden transform-dropdown-show"></p>
+                  <a href="javascript:;" class="block p-0 text-sm text-white transition-all ease-nav-brand" dropdown-trigger aria-expanded="false">
+                    <i class="cursor-pointer bi bi-bell-fill nav-text"></i>
+                    
+                  </a>
+  
+                  <ul dropdown-menu class="text-sm transform-dropdown before:font-awesome before:leading-default before:duration-350 before:ease lg:shadow-3xl duration-250 min-w-44 before:sm:right-8 before:text-5.5 pointer-events-none absolute right-0 top-0 z-50 origin-top list-none rounded-lg border-0 border-solid border-transparent dark:shadow-dark-xl dark:bg-slate-850 bg-white bg-clip-padding px-2 py-4 text-left text-slate-500 opacity-0 transition-all before:absolute before:right-2 before:left-auto before:top-0 before:z-50 before:inline-block before:font-normal before:text-white before:antialiased before:transition-all before:content-['\f0d8'] sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:mt-2 lg:block lg:cursor-pointer">
+                    <!-- add show class on dropdown open js -->
+                    <li class="relative mb-2">
+                      <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg bg-transparent px-4 duration-300 hover:bg-gray-200 hover:text-slate-700 lg:transition-colors" href="javascript:;">
+                        <div class="flex py-1">
+                          <div class="my-auto">
+                            <img src="../assets/img/team-2.jpg" class="inline-flex items-center justify-center mr-4 text-sm text-white h-9 w-9 max-w-none rounded-xl" />
+                          </div>
+                          <div class="flex flex-col justify-center">
+                            <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white"><span class="font-semibold">New message</span> from Laur</h6>
+                            <p class="mb-0 text-xs leading-tight text-slate-400 dark:text-white/80">
+                              <i class="mr-1 fa fa-clock"></i>
+                              13 minutes ago
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+  
+                    <li class="relative mb-2">
+                      <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700" href="javascript:;">
+                        <div class="flex py-1">
+                          <div class="my-auto">
+                            <img src="https://via.placeholder.org/50" class="inline-flex items-center justify-center mr-4 text-sm text-white bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 h-9 w-9 max-w-none rounded-xl" />
+                          </div>
+                          <div class="flex flex-col justify-center">
+                            <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white"><span class="font-semibold">New album</span> by Travis Scott</h6>
+                            <p class="mb-0 text-xs leading-tight text-slate-400 dark:text-white/80">
+                              <i class="mr-1 fa fa-clock"></i>
+                              1 day
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+  
+                    <li class="relative">
+                      <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700" href="javascript:;">
+                        <div class="flex py-1">
+                          <div class="inline-flex items-center justify-center my-auto mr-4 text-sm text-white transition-all duration-200 ease-nav-brand bg-gradient-to-tl from-slate-600 to-slate-300 h-9 w-9 rounded-xl">
+                            <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <title>credit-card</title>
+                              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                  <g transform="translate(1716.000000, 291.000000)">
+                                    <g transform="translate(453.000000, 454.000000)">
+                                      <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
+                                      <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
+                                    </g>
+                                  </g>
+                                </g>
+                              </g>
+                            </svg>
+                          </div>
+                          <div class="flex flex-col justify-center">
+                            <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white">Payment successfully completed</h6>
+                            <p class="mb-0 text-xs leading-tight text-slate-400 dark:text-white/80">
+                              <i class="mr-1 fa fa-clock"></i>
+                              2 days
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+        
+            
           
           </div>
           <ul class="flex flex-row justify-end pl-0 mb-5 -py-6 list-none md-max:w-full">
@@ -188,31 +387,8 @@
         </div>
       </nav>
 
-      <!-- end Navbar -->
-      <style>
-        .cent-bg {
-          background-image: url(./assets/img/assset-bg.png);
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: contain;
-          
-        }
-        .Custcard{
-              background-color: #F80000;
-              /* border: 1px solid;
-              padding: 10px; */
-              box-shadow: 5px 10px 18px #888888;
-              height: 60px !important;
-              margin: 0 0px 20px 0;
-            }
-            .dashIcon{
-              margin: 8px 15px 2px 5px !important;
-            }
-            .nCard{
-              width: 230px;
-              margin: 0 8px 30px 0;
-            }
-      </style>
+     
+
 
       <div class="flex">
         <div class="w-4/5">
@@ -228,409 +404,69 @@
   <div class="w-full max-w-full px-3 mt-0 mr-5 ml-5 lg:w-12/12 lg:flex-none">
     <div class="m-4 border-black/12.5 bg-zinc-600 dark:shadow-dark-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border cent-bg">
       <div class="flex border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid p-6 pt-4 pb-0">
-        <h6 class="capitalize dark:text-white" style="font-size: 1.5rem;">Dashboard</h6>
+        <h6 class="capitalize dark:text-white" >Dashboard</h6>
         <hr class="mt-5 mx-6 bg-slate-950 text-slate-950" style="border: 3px solid #000; width: 70px; height: 2px; opacity: .9;">
       </div>
 
+      <div class="container">
+        <div class="card">
+          <span class="card-icon"><i class="bi bi-hourglass-split"></i></span>
+            <!-- <img src="https://via.placeholder.com/300" alt="Card Image"> -->
+            <div class="card-content" style="">
+              <span class="pending-task">5</span>
+                <p class="task-status">Pending Task</p>
+            </div>
+        </div>
+        <div class="card">
+            <!-- <img src="https://via.placeholder.com/300" alt="Card Image"> -->
+            <span class="card-icon"><i class="bi bi-hourglass-split"></i></span>
+            <div class="card-content">
+              <span class="pending-task">5</span>
+              <p class="task-status">Processing TasK</p>
+            </div>
+        </div>
+        <div class="card">
+            <!-- <img src="https://via.placeholder.com/300" alt="Card Image"> -->
+            <span class="card-icon"><i class="bi bi-hourglass-split"></i></span>
+            <div class="card-content">
+              <span class="pending-task">5</span>
+              <p class="task-status">Completed Task</p>
+            </div>
+        </div>
+    </div>
+
               <!-- cards -->
     <div class="flex gap-0 mb-6">
-      <div class="w-3/5 px-6 py-6 mx-auto">
-        <!-- row 1 -->
-        <div class="flex flex-wrap -mx-3">
-          <!-- card1 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/4 sm:flex-none xl:mb-0 xl:w-1/4 nCard">
-            <a href="arrest-seizures.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/arrest.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-1 pl-4 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Arrest & Seizures</p>
-                      <!-- <h5 class="mb-2 font-semibold dark:text-white">Total: 10</h5> -->
-                      <!-- <p class="mb-0 dark:text-white dark:opacity-60">
-                        <span class="text-sm font-semibold leading-normal text-emerald-500">3 Reports</span>
-                      </p> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-
-          <!-- card2 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4 nCard">
-            <a href="./pages/create-report.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/DRUGS ICON.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-1 pl-2 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Drug Demand Reduction</p>
-                      <!-- <h5 class="mb-2 font-semibold dark:text-white">Total: 10</h5> -->
-                      <!-- <p class="mb-0 dark:text-white dark:opacity-60">
-                        <span class="text-sm font-semibold leading-normal text-emerald-500">3 Reports</span>
-                      </p> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-          <!-- card3 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4 nCard">
-            <a href="./pages/create-report.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/INVESTIGATION_ICON-removebg-preview.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-4 p-2.5 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Investigations</p>
-                      <!-- <h5 class="mb-2 font-semibold dark:text-white">Total: 10</h5> -->
-                      <!-- <p class="mb-0 dark:text-white dark:opacity-60">
-                        <span class="text-sm font-semibold leading-normal text-emerald-500">3 Reports</span>
-                      </p> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-        </div>
+      <div class="w-3/4 px-6 py-6 mx-auto">
+        
 <!-- monteratts -->
-        <!-- row 1.1 -->
-        <div class="flex flex-wrap -mx-3">
-          <!-- card1 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4 nCard">
-            <a href="./pages/create-report.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/Proceeds of crime.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-1 pl-4 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Proceeds of Crime</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-
-          <!-- card2 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4 nCard">
-            <a href="./pages/create-report.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/LAW SCALE.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-4 p-2.5 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Prosecutions</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-
-          <!-- card3 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
-            <a href="./pages/create-report.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/Community Engagement.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-1 pl-4 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Equipment & Machinery</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-        </div>
-
-        <!-- row 1.2-->
-        <div class="flex flex-wrap -mx-3">
-          <!-- card1 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
-            <a href="./pages/create-report.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/CONSUMABLES.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-4 p-2.5 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Consumables</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-
-          <!-- card2 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
-            <a href="./pages/create-report.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/forensics.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-4 p-2.5 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Forensics</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-
-          
-          <!-- card 3 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
-            <a href="./pages/create-report.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/DOCUMENT.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-1 pl-3 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Document Management</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-        </div>
-
-        <!-- row 1.3-->
-        <div class="flex flex-wrap -mx-3">
-          <!-- card1 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
-            <a href="./pages/create-report.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/CONSUMABLES.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-3 p-2.5 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Incoming Mails</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-
-          <!-- card2 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
-            <a href="./pages/create-report.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/forensics.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-3 p-2.5 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Outgoing Mails</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-
-          
-          <!-- card 3 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
-            <a href="./pages/create-report.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/DOCUMENT.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-4 pl-3 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Memos</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-        </div>
-
-        <!-- row 1.5-->
-        <div class="flex flex-wrap -mx-3">
+      
           
 
-          <!-- card2 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
-            <a href="./pages/create-report.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/PERONNEL.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-1 pl-4 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Personel <br> Self-Service</p>
-                    </div>
-                  </div>
-                </div>
+
+        <div class="flex flex-wrap mt-6 -mx-3">
+          <div class="w-full max-w-full px-3 mt-0 lg:w-9/12 lg:flex-none">
+            <div class="border-black/12.5 dark:bg-slate-850 dark:shadow-dark-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
+              <div class="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid p-6 pt-4 pb-0">
+                <h6 class="capitalize dark:text-white">Pending Task</h6>
+                <p class="mb-0 text-sm leading-normal dark:text-white dark:opacity-60">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima quo dicta quam, iusto ipsa aliquid tempora pariatur quos voluptate minus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem hic quis at tempore laborum! Officiis quos, omnis iste debitis fugit quasi amet cupiditate officia pariatur at quas, corporis nihil dolorum? Ipsa ipsum esse, unde libero incidunt sit eaque fugiat necessitatibus?
+                </p>
               </div>
             </div>
-          </a>
           </div>
 
-          <!-- card3 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
-            <a href="./pages/create-report.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/Community Engagement.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-1 pl-4 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Community Engagement</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-          
-          <!-- card 4 -->
-          <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-10 xl:w-1/4 nCard">
-            <a href="./pages/create-report.html">
-            <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border Custcard">
-              <div class="flex-auto">
-                <div class="flex flex-row -mx-3">
-                  
-                  <div class="text-right basis-1/3">
-                    <div class="inline-block w-12 h-12 text-center rounded-circle ">
-                      <!-- <i class="fa-solid fa-handcuffs fa-rotate-90 fa-2xl pt-5" style="color: #0d0d0d;"></i> -->
-                      <img src="./assets/img/arrest.png" width="50" height="45"  class="dashIcon" alt="">
-                    </div>
-                  </div>
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p class="mb-0 font-sans pt-1 pl-4 text-lg font-bold leading-normal capitalize ark:text-white dark:opacity-60" style="color: #FFFFFF;">Help Desk Support</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
         </div>
+
+          
+       
         <!-- <div class="flex-auto p-4">
           <div>
           <div style="font-size: 0.5rem;" id="container"></div>
         </div>
       </div> -->
     </div>
-    <div class="w-2/5 grid h-screen grid-cols-1 lg:grid-cols-2">
+    <div class="w-1/4 grid h-screen grid-cols-1 lg:grid-cols-2">
       <div class="hidden lg:block">
           <div class="bg-white shadow-lg overflow-hidden " style="margin-bottom: 15px;">
             <div class="mb-3.5">
