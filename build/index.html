@@ -41,17 +41,27 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
   /* body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
   } */
+  :root{
+    --main-color: #C620200;
+    --card-left: #BF0010;
+    --card-right: #D47600;
+    --nav-top: #00000;
+    --nav-bottom: #23232300;
+    --font-family: 'Poppins', sans-serif;
+  }
   .nav-text{
               color: #000;
             }
 
   .container {
+    
       display: flex;
       flex-wrap: wrap;
       /* justify-content: space-around; */
@@ -61,6 +71,7 @@
   .card {
       width: 250px;
       height: 110px;
+      background-image: linear-gradient(to right, var(--card-left) , var(--card-right));
       margin: 15px 15px 5px 15px;
       border: 1px solid #ccc;
       border-radius: 8px;
